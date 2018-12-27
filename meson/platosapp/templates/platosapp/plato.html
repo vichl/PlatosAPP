@@ -1,0 +1,44 @@
+{% extends 'platosapp/index.html' %}
+
+{% block content %}
+    <br />
+    <div class="row">
+        <h1>{{ plato.nombre }}</h1>
+    </div>
+    <br />
+    <div class="row" style="padding-bottom: 10px;">
+        <div class="col-md-10">
+            <h3 class="cabeceraModificada">Ingredientes: </h3>
+        </div>
+        <!--
+        <div class="col-md-2">
+            <a href="{% url 'platosapp:nuevo_ingrediente' plato.id %}" class="btn btn-primary btn-sm float-right" style="color: white;">
+                Añadir ingrediente
+            </a>
+        </div>
+        -->
+    </div>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Ingrediente</th>
+                    <th>Cantidad</th>
+                    <th>Coste</th>
+                </tr>
+                {% for ingrediente in ingredientes_lista %}
+                <tr>
+                    <td>{{ ingrediente.nombre }}</td>
+                    <td>{{ ingrediente.cantidad }}</td>
+                    <td>{{ ingrediente.coste }}€</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td></td>
+                    <td><b>Total:</b></td>
+                    <td><b>{{ costeTotal }}€</b></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

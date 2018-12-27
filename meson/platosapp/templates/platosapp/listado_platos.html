@@ -1,0 +1,16 @@
+{% extends 'platosapp/index.html' %}
+
+{% block content %}
+    <br />
+    <div class="row">
+        {% for cat in categorias %}
+        <div class="col-md-4">
+            <h2>{{ cat.nombre }}</h2>
+                {% for p in cat.platos %}
+                 <a href="{% url 'platosapp:plato' p.id %}" style="padding-left: 10px;">{{ p.nombre }}</a><br />
+                {% endfor %}
+                <br />
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
