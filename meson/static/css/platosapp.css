@@ -1,0 +1,71 @@
+/*
+@font-face{
+    font-family:'Glyphicons Halflings';
+    src: url("{% static 'fonts/glyphicons-halflings-regular.eot' %}");
+
+}
+*/
+
+.page-header {
+    background-color: #cc0000;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+h1, h2, h3 {
+    color: #cc0000;
+    font-family: 'Lobster';
+}
+
+a {
+    color: black;
+}
+
+.cabeceraModificada {
+    color: black;
+}
+
+.btn-primary {
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.modal-header {
+    background-color: #cc0000;
+}
+
+.modal-title {
+    color: white;
+}
+
+.close {
+    color: white;
+}
+
+#eliminar_ingrediente .btn-default {
+    background-color: #999a9b;
+    color:white;
+}
+
+.bg-light {
+    background-color: #cc0000 !important;
+}
+
+.navbar-light h1 a {
+    color: white;
+    font-family: 'Lobster';
+}
+
+.navbar-light h1 a:hover {
+    text-decoration: none;
+}
+
+.nav-item a {
+    color: black;
+    font-family: 'Lobster';
+    padding: 10px 10px 10px 20px;
+}
+
+.nav-item a:hover {
+    text-decoration: none;
+}
