@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Mesón La Rueda - Platos APP</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/platosapp.css' %}" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
@@ -13,6 +13,7 @@
             crossorigin="anonymous"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
+<!--
 <style>
     @font-face{
         font-family:'Glyphicons Halflings';
@@ -23,6 +24,7 @@
              url('{% static 'fonts/glyphicons-halflings-regular.svg' %}?528782f48380#glyphicons_halflingsregular') format('svg');
     }
 </style>
+-->
 <body>
     {% if user.is_authenticated %}
     <div class="page-header">
