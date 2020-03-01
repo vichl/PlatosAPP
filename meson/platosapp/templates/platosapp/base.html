@@ -4,42 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Mesón La Rueda - Platos APP</title>
+    <!-- Hojas de estilos  -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/platosapp.css' %}" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
 </head>
-<!--
-<style>
-    @font-face{
-        font-family:'Glyphicons Halflings';
-        src: url({% static 'fonts/glyphicons-halflings-regular.eot' %});
-        src: url('{% static 'fonts/glyphicons-halflings-regular.eot' %}?&528782f48380#iefix') format('embedded-opentype'),
-             url('{% static 'fonts/glyphicons-halflings-regular.woff' %}?528782f48380') format('woff'),
-             url('{% static 'fonts/glyphicons-halflings-regular.ttf' %}?528782f48380') format('truetype'),
-             url('{% static 'fonts/glyphicons-halflings-regular.svg' %}?528782f48380#glyphicons_halflingsregular') format('svg');
-    }
-</style>
--->
+
 <body>
     {% if user.is_authenticated %}
-    <div class="page-header">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <h1><a href="{% url 'platosapp:index' %}">Mesón La Rueda</a></h1>
+    <nav class="navbar navbar-expand-md" id="top_bar">        
+        <a class="navbar-brand" href="/plato/" id="logo">Meson La Rueda</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <h2><a href="{% url 'platosapp:listado_platos' %}">Platos</a></h2>
+                    <a class="nav-link" href="{% url 'platosapp:listado_categorias' %}"><i class="fas fa-clipboard-list fa-lg"></i> &nbsp;Categorías</a>
                 </li>
                 <li class="nav-item">
-                    <h2><a href="{% url 'platosapp:listado_productos' %}">Productos</a></h2>
+                    <a class="nav-link" href="{% url 'platosapp:listado_platos' %}"><i class="fas fa-hamburger fa-lg"></i> &nbsp;Platos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'platosapp:listado_familias' %}"><i class="fas fa-box fa-lg"></i> &nbsp;Familias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'platosapp:listado_productos' %}"><i class="fas fa-cheese fa-lg"></i> &nbsp;Productos</a>
                 </li>
             </ul>
-        </nav>
-    </div>
+        </div>
+    </nav>
     <div class="content container">
         {% block content %}
         {% endblock content%}

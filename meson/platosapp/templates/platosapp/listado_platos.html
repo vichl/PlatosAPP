@@ -3,6 +3,18 @@
 {% block content %}
     <br />
     <div class="row">
+        <div class="col">
+            <div class="d-flex flex-row justify-content-end">
+                <form method="GET" action="{% url 'platosapp:nuevo_plato' %}">
+                    {% csrf_token %}
+                    <button id="nuevoPlato_btn" type="submit" class="btn btn-primary btn-sm">
+                        Añadir plato &nbsp;<i class="fas fa-plus"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         {% for cat in categorias %}
         <div class="col-sm-6">
             <h2>{{ cat.nombre }}</h2>

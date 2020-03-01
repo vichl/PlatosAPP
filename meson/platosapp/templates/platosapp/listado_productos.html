@@ -3,22 +3,24 @@
 {% block content %}
     <br />
     <div class="row">
-        <div class="col-md-4">
-            <form method="GET" action="{% url 'platosapp:nuevo_producto' %}">
-                {% csrf_token %}
-                <button id="nuevoProducto_btn" type="submit" class="btn btn-primary btn-sm float-sm-left">
-                    <span class="glyphicon glyphicon-plus">Añadir Producto +</span>
-                </button>
-            </form>
+        <div class="col">
+            <div class="d-flex flex-row justify-content-end">
+                <form method="GET" action="{% url 'platosapp:nuevo_producto' %}">
+                    {% csrf_token %}
+                    <button id="nuevoProducto_btn" type="submit" class="btn btn-primary btn-sm">
+                        Añadir producto &nbsp;<i class="fas fa-plus"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     <br />
     <div class="row">
         {% for fam in familias %}
-        <div class="col-sm-6">
+        <div class="col-lg-4 col-md-6 col-12">
             <h2>{{ fam.nombre }}</h2>
                 {% for p in fam.productos %}
-                 <a href="{% url 'platosapp:producto' p.id %}" style="padding-left: 10px;">{{ p.nombre }}</a><br />
+                 <a href="{% url 'platosapp:producto' p.id %}" style="padding-left: 1rem;">{{ p.nombre }}</a><br />
                 {% endfor %}
                 <br />
         </div>

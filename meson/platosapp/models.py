@@ -20,6 +20,7 @@ class Categoria(models.Model):
 class Plato(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    precio_venta = models.FloatField(default=0)
     observaciones = models.TextField(max_length=500, blank=True, default="")
 
     def __str__(self):

@@ -3,14 +3,18 @@
 {% block content %}
     <br />
     <div class="row">
-        {% if producto %}
-        <h1>{{ producto.nombre }}</h1>
-        {% else %}
-        <h1>Nuevo producto</h1>
-        {% endif %}
+        <div class="col">
+            <div class="d-flex flex-row">
+                {% if categoria %}
+                <h1>{{ .nombre }}</h1>
+                {% else %}
+                <h1>Nueva categoría de platos</h1>
+                {% endif %}
+            </div>
+        </div>
     </div>
-    {% if producto %}
-    <form method="POST" action="{% url 'platosapp:producto' producto.id %}" id="producto_form">{% csrf_token %}
+    {% if categoria %}
+    <form method="POST" action="{% url 'platosapp:categoria' categoria.id %}" id="categoria_form">{% csrf_token %}
         <div class="row">
             <div class="col-md-6">
                 {{ form.as_p }}
@@ -18,10 +22,10 @@
             </div>
         </div>
     </form>
-    <form method="POST" action="{% url 'platosapp:borrar_producto' producto.id %}" id="borrar_form">{% csrf_token %}
+    <form method="POST" action="{% url 'platosapp:borrar_categoria' categoria.id %}" id="borrar_form">{% csrf_token %}
     </form>
     {% else %}
-    <form method="POST" action="{% url 'platosapp:nuevo_producto' %}" id="producto_form">{% csrf_token %}
+    <form method="POST" action="{% url 'platosapp:nueva_categoria' %}" id="categoria_form">{% csrf_token %}
         <div class="row">
             <div class="col-md-6">
                 {{ form.as_p }}
@@ -30,22 +34,23 @@
         </div>
     </form>
     {% endif %}
-
+    
     <div class="row">
         <div class="col-md-6">
             <div class="d-flex flex-row justify-content-between">
-                {% if producto %}
+                {% if categoria %}
                 <button type="submit" class="btn btn-primary" form="borrar_form">
                     Eliminar &nbsp;<i class="fas fa-times"></i>
                 </button>
                 {% else %}
                 <div></div>
                 {% endif %}
-                <button type="submit" class="btn btn-primary" form="producto_form">
+                <button type="submit" class="btn btn-primary" form="categoria_form">
                     Guardar &nbsp;<i class="far fa-save"></i>
                 </button>
             </div>
         </div>
     </div>
+       
 <br />
 {% endblock content %}
