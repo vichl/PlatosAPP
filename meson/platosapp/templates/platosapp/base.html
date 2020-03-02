@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mesón La Rueda - Platos APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Hojas de estilos  -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -41,9 +42,17 @@
             </ul>
         </div>
     </nav>
-    <div class="content container">
+    <div class="container">
+       
         {% block content %}
         {% endblock content%}
+    </div>
+    
+    {% else %}
+    <div class="container">
+        <div class="d-flex flex-row justify-content-center pt-3">
+            <a href="/admin/">Login</a>
+        </div>
     </div>
     {% endif %}
 </body>

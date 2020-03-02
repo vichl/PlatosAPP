@@ -3,11 +3,13 @@
 {% block content %}
     <br />
     <div class="row">
-        {% if producto %}
-        <h1>{{ producto.nombre }}</h1>
-        {% else %}
-        <h1>Nuevo producto</h1>
-        {% endif %}
+        <div class="col">
+            {% if producto %}
+            <h1>{{ producto.nombre }}</h1>
+            {% else %}
+            <h1>Nuevo producto</h1>
+            {% endif %}
+        </div>
     </div>
     {% if producto %}
     <form method="POST" action="{% url 'platosapp:producto' producto.id %}" id="producto_form">{% csrf_token %}

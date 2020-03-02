@@ -26,7 +26,7 @@ SECRET_KEY = 'a^k*9*7)bd8r=b@d+c243jms$qzab@k0bgxh)**zr%c2z9c+_g'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['mesonlarueda.pythonanywhere.com']
-ALLOWED_HOSTS = ['127.0.0.1', 'mesonlarueda.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'mesonlarueda.pythonanywhere.com', '192.168.1.139']
 
 # Application definition
 
